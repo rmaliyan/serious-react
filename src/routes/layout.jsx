@@ -103,7 +103,13 @@ export function Layout() {
           </div>
         </div>
 
-        <div className="menu-icon-container    border border-slate-500     bg-neutral-700 bg-opacity-80     xl:h-32 xl:w-32     sm:h-20 sm:w-20     h-20 w-20"></div>
+        <div className="menu-icon-container flex items-center justify-center   border border-slate-500     bg-neutral-700 bg-opacity-80     xl:h-32 xl:w-32     sm:h-20 sm:w-20     h-20 w-20">
+        <img
+              className="h-6"
+              src="/public/sidebarLogo.svg"
+              alt="Sidebar icon"
+            />
+        </div>
       </div>
 
       <div className="lower-bar   flex     w-full h-full">
