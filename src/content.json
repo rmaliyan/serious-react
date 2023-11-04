@@ -1,0 +1,60 @@
+{
+    "en": {
+        "menu": {
+            "home": "Home",
+            "about": "About Us",
+            "technologies": "Technologies",
+            "services": "Services",
+            "clients": "Clients",
+            "courses": "Courses",
+            "careers": "Careers",
+            "contacts": "Contact Us"
+        },
+        "home": {
+            "title": "YOUR BUSINESS NEEDS OUR SOLUTIONS",
+            "paragraph": "Serious is a leading web design and software development company with a big pool of software developers accessible for dedicated, fixed-cost projects.Hire Serious web developers to create unique and responsive websites, web apps, and eCommerce solutions using cutting-edge web technologies like PHP, Laravel, ReactJS, VueJS, Node.js, and Python.We consult, design, and implement proactive web, mobile, and custom software solutions that drive innovation and generate digital success!"
+        },
+        "about": {
+            "title": "About Us",
+            "paragraph": "Serious is a leading web design and software development company with a big pool of software developers accessible for dedicated, fixed-cost projects.Hire Serious web developers to create unique and responsive websites, web apps, and eCommerce solutions using cutting-edge web technologies like PHP, Laravel, ReactJS, VueJS, Node.js, and Python.We consult, design, and implement proactive web, mobile, and custom software solutions that drive innovation and generate digital success!"
+        },
+        "delivery": {
+            "title0": "Our Delivery process",
+            "title1": "Discover",
+            "paragraph1": "Exploration is how we shape brands, and we use in-depth research to challenge assumptions at every stage.",
+            "title2": "Design",
+            "paragraph2": "Our design philosophy is to keep things simple. We like the satisfaction of developing something unique that is simple for end consumers.",
+            "title3": "Build",
+            "paragraph3": "We create with efficiency and skill, providing adaptable and scalable business-driven solutions, using modern technologies.",
+            "title4": "Deliver",
+            "paragraph4": "We approach both our work and our practice in an iterative manner, continuously searching for ways to better what we do."
+        },
+        "ratings": {
+            "title": "Our ratings and customer reviews"            
+        }
+    },
+    "ru": {
+        "menu": {
+            "home": "Главный",
+            "about": "О нас",
+            "technologies": "Технологии",
+            "services": "Сервисы",
+            "clients": "Клиенты",
+            "courses": "Курсы",
+            "careers": "Карьеры",
+            "contacts": "Контакты"
+        }
+    },
+    "am": {
+        "menu": {
+            "home": "Գլխավոր",
+            "about": "Մեր մասին",
+            "technologies": "Տեխնոլոգիաներ",
+            "services": "Սերվիսներ",
+            "clients": "Կլիենտնոր",
+            "courses": "Կուրսեր",
+            "careers": "Կարյերաներ",
+            "contacts": "Կապ"
+        }
+    }
+}
