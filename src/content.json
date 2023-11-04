@@ -12,7 +12,7 @@
         },
         "home": {
             "title": "YOUR BUSINESS NEEDS OUR SOLUTIONS",
-            "paragraph": "Serious is a leading web design and software development company with a big pool of software developers accessible for dedicated, fixed-cost projects.Hire Serious web developers to create unique and responsive websites, web apps, and eCommerce solutions using cutting-edge web technologies like PHP, Laravel, ReactJS, VueJS, Node.js, and Python.We consult, design, and implement proactive web, mobile, and custom software solutions that drive innovation and generate digital success!"
+            "paragraph": "Since 2017, we've been providing web and mobile app development services to global businesses, with a focus on results-driven project management and seamless communication.Our design-focused approach and project execution processes help you to deliver the right solutions."
         },
         "about": {
             "title": "About Us",
@@ -31,6 +31,55 @@
         },
         "ratings": {
             "title": "Our ratings and customer reviews"            
+        },
+        "technologies": {
+            "title": "Technologies"            
+        },
+        "webdesign": {
+            "title1": "Web design &",
+            "title2": "development",
+            "paragraph": "Our trained developers have exceptional knowledge in dealing with the newest web technologies to provide unique web solutions as a leading website application development business. Our outsourcing staff not only develops unique web apps, but also helps you address business difficulties.We are always ready to meet your high expectations and quality standards, find solutions to your business issues, and can provide opportunity for future product growth. Our UI/UX researchers and designers are experts in creating visually beautiful, user-friendly interfaces that are simple to use."
+        },
+        "mobile": {
+            "title1": "Mobile App",
+            "title2": "development",
+            "paragraph": "From concept to launch, our highly experienced and dedicated developers will provide you with full-cycle mobile app development services, including expert business analysis, design, and development of the mobile application, integrating the new product into the infrastructure, and scaling up and optimizing development on demand. To stay up with technological developments, our team is made up of skilled front-end, back-end, and cloud developers, as well as infrastructure. Our team can dive into your company's environment, perform market research, and meet your requirements, goals, and abilities."
+        },
+        "software": {
+            "title1": "Software",
+            "title2": "development",
+            "paragraph": "With decades of expertise as a custom software development company, we have a proven track record of assisting clients in transforming their organizations with new technology. We ensure the long-term success of your enterprises by using a skilled team of bespoke software developers, designers, consultants, project managers, analysts, QA engineers, testers, and data scientists. Our software engineers are well enough in the various platforms and frameworks that are utilized in bespoke software development projects and services."
+        },
+        "business": {
+            "title1": "Business Automation &",
+            "title2": "CRM Development",
+            "paragraph": "To enhance customer relationship management procedures, we provide end-to-end custom development services. Our CRM solution engineers are skilled in building solutions based on open source platforms. CRM solutions like as CRM Integration, CRM Implementation, and Mobile CRM are available through our services, which include solution integration and technological recommendations. Use cloud-based CRM technology to manage contacts with new and present customers, as well as to consolidate and record all of their information for future use. Our staff can assist you in leveraging the key benefit of a Custom CRM system, which will follow your sales through the full process from lead to customer, creating customer connections, arranging strong communication at appropriate intervals, and improving profitability."
+        },  
+        "ceo": {
+            "title": "Ceo & Smm",
+            "paragraph": "Just you have to do now is place an order for SEO and social media marketing services. These guidelines are effective marketing tools for your products, website, and brand. As you may know, SEO stands for search engine optimization, which is creating a website that allows you to rank highly in search engines. SMM refers to the use of social media to draw attention to your company."
+        },
+        "clients": {
+            "title1": "Meet just some of the clients who",
+            "title2": "who have already chosen Serious Web"
+        },
+        "fullstack": {
+            "title": "Full stack",
+            "emphasis": "It includes:",
+            "paragraph": "FRONT END (HTML, CSS, BOOSTRAP/FLEXBOX, JAVASCRIPT/OOP, DOM, JQUERY, AJAX) BACKEND (PHP/OOP, MYSQL, LARAVEL) We don't need prior knowledge, and you can get results from scratch in a few months and bring your skills to a professional level. It is important to take the first step. You can choose the language option that interests you more. And to understand this, we have specially created the first free lesson for our students."
+        },
+        "reactjs": {
+            "title": "React JS",
+            "emphasis": "It includes:",
+            "paragraph": "FRONT END (HTML, CSS, BOOSTRAP/FLEXBOX, JAVASCRIPT/OOP, REACT JS, REDUX) Thus, starting from the age of 10, we train and give our country specialists in one of the MOST POPULAR professions ` programming specialists.",
+            "emphasis2": "And the best also join our beautiful team after the end of the course."
+        },
+        "careers": {
+            "title": "JOIN OUR TEAM!",
+            "paragraph": "Our philosophy is quite simple: only by having the highest quality individuals can you produce the highest quality products, combining the best in content, design, technology, and client services."
+        },
+        "contact": {
+            "title": "Contact Us"
         }
     },
     "ru": {
@@ -43,6 +92,77 @@
             "courses": "Курсы",
             "careers": "Карьеры",
             "contacts": "Контакты"
+        },
+        "home": {
+            "title": "ВАШЕМУ БИЗНЕСУ НУЖНЫ НАШИ РЕШЕНИЯ",
+            "paragraph": "С 2017 года мы предоставляем услуги по разработке веб- и мобильных приложений для глобальных компаний, уделяя особое внимание управлению проектами, ориентированными на результат, и бесперебойной коммуникации. Наш подход, основанный на дизайне, и процессы управления проектами помогут вам достичь наилучших результатов."
+        },
+        "about": {
+            "title": "О Нас",
+            "paragraph": "Serious - ведущая компания по веб-дизайну и разработке программного обеспечения с большим пулом разработчиков программного обеспечения, доступных для специализированных проектов с фиксированной стоимостью. У нас Серьезные веб-разработчики которые создают уникальные и отзывчивые веб-сайты, веб-приложения и решения для электронной коммерции, используя передовые веб-технологии, такие как PHP, Laravel, ReactJS, VueJS, Node.js , и Python. Мы консультируем, разрабатываем и внедряем активные веб, мобильные и кастомные программные решения, тестируем инновации и добиваемся цифрового успеха!"
+        },
+        "delivery": {
+            "title0": "Наш процесс доставки",
+            "title1": "Обнаруживать",
+            "paragraph1": "Исследование - это то, как мы формируем бренды, и мы используем углубленные исследования, чтобы оспаривать предположения на каждом этапе.",
+            "title2": "Дизайн",
+            "paragraph2": "Наша философия дизайна заключается в том, чтобы все было просто. Нам нравится получать удовлетворение от разработки чего-то уникального, простого для конечных потребителей.",
+            "title3": "Создать",
+            "paragraph3": "Мы создаем эффективно и умело, предоставляя адаптируемые и масштабируемые бизнес-решения с использованием современных технологий.",
+            "title4": "Доставлять",
+            "paragraph4": "Мы подходим как к нашей работе, так и к нашей практике итеративно, постоянно ищем способы улучшить то, что мы делаем."
+        },
+        "ratings": {
+            "title": "Наши рейтинги и отзывы клиентов"            
+        },
+        "technologies": {
+            "title": "Технологии"            
+        },
+        "webdesign": {
+            "title1": "Веб дизайн и",
+            "title2": "программирование",
+            "paragraph": "Являясь ведущей компанией по разработке веб-приложений, наши сертифицированные разработчики обладают непревзойденным опытом работы с новейшими веб-технологиями для предоставления индивидуальных веб-решений. Наша аутсорсинг команда не только создает собственные веб-приложения, но и решает ваши бизнес-задачи. Мы всегда готовы соответствовать вашим высоким ожиданиям и стандартам качества, находить решения для ваших бизнес-задач и предлагать возможности для дальнейшего развития продукта. Наши дизайнеры UI/UX специализируются на создании эстетически привлекательных, удобных интерфейсов, в которых легко ориентироваться."
+        },
+        "mobile": {
+            "title1": "Разработка мобильных",
+            "title2": "приложении",
+            "paragraph": "Наши высококвалифицированные и преданные своему делу разработчики предоставят вам полный цикл услуг по разработке мобильных приложений, включая экспертный бизнес-анализ, дизайн и разработку мобильного приложения, от идеи до запуска, интеграцию нового продукта в инфраструктуру и дальнейшее предоставление дополнительных услуг. масштабирование разработки и оптимизация по запросу. Наша команда состоит из опытных разработчиков клиентских, серверных и облачных сервисов. Наша команда может погрузиться в вашу бизнес-экосистему, изучить рынок и понять ваши потребности, требования и возможности."
+        },
+        "software": {
+            "title1": "Программное",
+            "title2": "обеспечение",
+            "paragraph": "У нас есть проверенный опыт оказания помощи клиентам в преобразовании их бизнеса с использованием инновационных технологий и многолетнего опыта работы в качестве компании по разработке программного обеспечения на заказ. Имея опытную команду разработчиков программного обеспечения, дизайнеров, консультантов, менеджеров проектов, аналитиков, QA-инженеров, тестировщиков и специалистов по данным, мы гарантируем вам долгосрочный рост вашего бизнеса. Наши разработчики программного обеспечения обладают глубокими знаниями основных платформ/фреймворков, используемых для проектов и услуг по разработке программного обеспечения на заказ."
+        },
+        "business": {
+            "title1": "Автоматизация бизнеса",
+            "title2": "CRM-разработка",
+            "paragraph": "Мы предоставляем комплексные специализированные услуги по разработке для улучшения процессов управления взаимоотношениями с клиентами. Наши специалисты по решениям CRM имеют опыт разработки решений на основе платформ с открытым исходным кодом. Наши услуги включают интеграцию решений и рекомендации по технологиям для предоставления решений CRM, таких как интеграция CRM, внедрение CRM и мобильная CRM. Используйте облачную технологию CRM для управления взаимодействием с потенциальными и текущими клиентами и централизации всей их информации, а также для будущего использования. Наша команда может помочь вам использовать основное преимущество индивидуального CRM-решения, сопровождающего ваши продажи на протяжении всего процесса от потенциальных клиентов до клиентов, выстраивая отношения с клиентами, планируя тесную коммуникацию с требуемыми интервалами и повышая прибыль."
+        },  
+        "ceo": {
+            "title": "Ceo и Smm",
+            "paragraph": "Вам просто необходимо заказать SEO и SMM услуги. Эти направления мощные инструменты для продвижения Вашей продукции, сайта, бренда. Как известно, SEO — это поисковая оптимизация, то есть настройка сайта, позволяющая вывести сайт в топ в поисковых системах. SMM же — использование социальных сетей для привлечения внимания пользователей к Вашему бизнесу."
+        },
+        "clients": {
+            "title1": "Ознакомьтесь с компаниями",
+            "title2": "которые уже выбрали Serious Web"
+        },
+        "fullstack": {
+            "title": "Full stack",
+            "emphasis": "Она включает в себя:",
+            "paragraph": "FRONT END (HTML, CSS, BOOSTRAP/FLEXBOX, JAVASCRIPT/OOP, DOM, JQUERY, AJAX) BACKEND (PHP/OOP, MYSQL, LARAVEL) Нам не нужны предварительные знания, и ты с нуля, за несколько месяцев можешь получить результат и довести свои навыки до профессионального уровня. Важно сделать первый шаг. Ты можешь выбрать тот вариант языков, который тебя больше интересует. А чтобы понять это, мы специально создали первый бесплатный урок для наших студентов."
+        },
+        "reactjs": {
+            "title": "React JS",
+            "emphasis": "Она включает в себя:",
+            "paragraph": "FRONT END (HTML, CSS, BOOSTRAP/FLEXBOX, JAVASCRIPT/OOP, REACT JS, REDUX) Таким образом, начиная с 10 лет, мы обучаем и даем нашей стране специалистов по одной из САМЫХ ВОСТРЕБОВАННЫХ профессий ` специалисты по программированию.",
+            "emphasis2": "А лучшие также пополняют нашу красивую команду после окончания курса."
+        },
+        "careers": {
+            "title": "ПРИСОЕДИНЯЙТЕСЬ К НАШЕЙ КОМАНДЕ!",
+            "paragraph": "Наша философия довольно проста: только привлекая высококвалифицированных специалистов, вы сможете производить продукцию высочайшего качества, сочетая лучшее в содержании, дизайне, технологиях и обслуживании клиентов."
+        },
+        "contact": {
+            "title": "Свяжитесь с нами"
         }
     },
     "am": {
