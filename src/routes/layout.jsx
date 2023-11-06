@@ -10,7 +10,7 @@ export function Layout() {
   const currentLocation = location.pathname.substring(index + 1);
 
   return (
-    <div id="layout-container" className="flex h-screen w-screen flex-col overflow-scroll text-white lg:overflow-hidden">
+    <div id="layout-container" className="layout-container flex h-screen w-screen flex-col overflow-scroll text-white lg:overflow-hidden">
       <div id="upper-bar" className="flex w-full">
         <div id="upper-horizontal-bar" className="flex h-20 w-full items-center border border-slate-500 bg-slate-950 bg-opacity-50 sm:h-20 sm:w-full xl:h-32 xl:w-full">
           <div id="Logo" className="Logo flex h-5/6 items-center justify-center ">
