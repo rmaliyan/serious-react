@@ -6,9 +6,9 @@ export function Layout() {
   const menu = Content[lang].menu;
 
   return (
-    <div className="layout-container flex flex-col    h-screen w-screen text-white">
+    <div className="layout-container flex flex-col   h-screen w-screen text-white overflow-hidden">
       <div className="upper-bar     flex     w-full">
-        <div className="upper-horizontal-bar    flex items-center   border border-slate-500     bg-slate-950 bg-opacity-50     xl:h-32 xl:w-full sm:h-20 sm:w-full    h-20 w-full">
+        <div className="upper-horizontal-bar    flex items-center   border  border-slate-500     bg-slate-950 bg-opacity-50     xl:h-32 xl:w-full sm:h-20 sm:w-full    h-20 w-full">
           <div className="Logo h-5/6 flex items-center justify-center ">
             <img
               className="ml-4 h-4/6"
@@ -42,7 +42,7 @@ export function Layout() {
             </div>
 
             <Link className="mx-2" to="home">
-              Technologies
+              {menu.technologies}
             </Link>
 
             <div className="flex flex-col">
@@ -72,9 +72,8 @@ export function Layout() {
             </div>
 
             <Link className="mx-2" to="clients">
-              Clients
+              {menu.clients}
             </Link>
-
 
             <div className="flex flex-col">
               <div>
@@ -89,26 +88,25 @@ export function Layout() {
                 </Link>
                 <Link className="grow" to="reactjs">
                   <div className="h-1.5 rounded bg-white"></div>
-                </Link>           
+                </Link>
               </div>
             </div>
 
-
             <Link className="mx-2" to="careers">
-              Careers
+              {menu.careers}
             </Link>
             <Link className="mx-2" to="contact">
-              Contact Us
+              {menu.contact}
             </Link>
           </div>
         </div>
 
         <div className="menu-icon-container flex items-center justify-center   border border-slate-500     bg-neutral-700 bg-opacity-80     xl:h-32 xl:w-32     sm:h-20 sm:w-20     h-20 w-20">
-        <img
-              className="h-6"
-              src="/public/sidebarLogo.svg"
-              alt="Sidebar icon"
-            />
+          <img
+            className="h-6"
+            src="/public/sidebarLogo.svg"
+            alt="Sidebar icon"
+          />
         </div>
       </div>
 
