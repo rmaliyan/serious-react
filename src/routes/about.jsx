@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Content from "../content.json"
+import Content from "../content.json";
 
 export function About() {
   let { lang } = useParams();

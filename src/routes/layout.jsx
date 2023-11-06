@@ -1,22 +1,23 @@
-import { Outlet, Link, useParams } from "react-router-dom";
+import { Outlet, Link, useParams, useLocation } from "react-router-dom";
 import Content from "../content.json";
 
 export function Layout() {
-  let { lang } = useParams();
+  const { lang } = useParams();
   const menu = Content[lang].menu;
 
+  const location = useLocation();
+  const index = location.pathname.indexOf("/", 1);
+  const currentLocation = location.pathname.substring(index + 1);
+
   return (
-    <div className="layout-container flex flex-col   h-screen w-screen text-white overflow-hidden">
-      <div className="upper-bar     flex     w-full">
-        <div className="upper-horizontal-bar    flex items-center   border  border-slate-500     bg-slate-950 bg-opacity-50     xl:h-32 xl:w-full sm:h-20 sm:w-full    h-20 w-full">
-          <div className="Logo h-5/6 flex items-center justify-center ">
-            <img
-              className="ml-4 h-4/6"
-              src="/public/SeriousLogo.webp"
-              alt="Brand logo"
+    <div id="layout-container" className="flex h-screen w-screen flex-col overflow-scroll text-white lg:overflow-hidden">
+      <div id="upper-bar" className="flex w-full">
+        <div id="upper-horizontal-bar" className="flex h-20 w-full items-center border border-slate-500 bg-slate-950 bg-opacity-50 sm:h-20 sm:w-full xl:h-32 xl:w-full">
+          <div id="Logo" className="Logo flex h-5/6 items-center justify-center ">
+            <img className="ml-4 h-4/6" src="/public/SeriousLogo.webp" alt="Brand logo"
             />
           </div>
-          <div className="Text mr-4 gap-y-0.5 ml-auto hidden lg:flex">
+          <div className="Text ml-auto mr-4 hidden gap-y-0.5 lg:flex">
             <Link className="mx-2" to="home">
               {menu.home}
             </Link>
@@ -101,7 +102,7 @@ export function Layout() {
           </div>
         </div>
 
-        <div className="menu-icon-container flex items-center justify-center   border border-slate-500     bg-neutral-700 bg-opacity-80     xl:h-32 xl:w-32     sm:h-20 sm:w-20     h-20 w-20">
+        <div className="menu-icon-container flex h-20 w-20   items-center justify-center     border border-slate-500     bg-neutral-700 bg-opacity-80     sm:h-20 sm:w-20     xl:h-32 xl:w-32">
           <img
             className="h-6"
             src="/public/sidebarLogo.svg"
@@ -110,19 +111,19 @@ export function Layout() {
         </div>
       </div>
 
-      <div className="lower-bar   flex     w-full h-full">
-        <div className="outlet-container     border border-slate-500      bg-slate-950 bg-opacity-50     h-full w-full">
+      <div className="lower-bar   flex     h-full w-full">
+        <div className="outlet-container     box-content h-full      w-full border   border-slate-500   bg-slate-950 bg-opacity-50">
           <Outlet />
         </div>
 
-        <div className="lower-vertical-bar  flex-col items-center    border border-slate-500     bg-slate-950 bg-opacity-50      hidden md:flex       xl:h-full xl:w-32     sm:h-full sm:w-20     h-full w-20">
-          <Link className="mt-10 my-2" to="/en">
+        <div className="lower-vertical-bar  hidden h-full    w-20 flex-col     items-center border      border-slate-500 bg-slate-950       bg-opacity-50 sm:h-full     sm:w-20 lg:flex     xl:h-full xl:w-32">
+          <Link className="my-2 mt-10" to={`/en/${currentLocation}`}>
             Eng
           </Link>
-          <Link className="my-2" to="/ru">
+          <Link className="my-2" to={`/ru/${currentLocation}`}>
             Rus
           </Link>
-          <Link className="my-2" to="/am">
+          <Link className="my-2" to={`/am/${currentLocation}`}>
             Arm
           </Link>
         </div>

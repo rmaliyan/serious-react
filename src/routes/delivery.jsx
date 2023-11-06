@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
-import Content from "../content.json"
-
+import Content from "../content.json";
 
 export function Delivery() {
   let { lang } = useParams();
@@ -8,7 +7,6 @@ export function Delivery() {
 
   return (
     <div className="flex flex-col p-10">
-
       <div className="text-3xl">{delivery.title0}</div>
 
       <div className="flex">
@@ -28,7 +26,7 @@ export function Delivery() {
           <div className="text-xl">{delivery.title4}</div>
           <div className="mt-5">{delivery.paragraph4}</div>
         </div>
-      </div>     
+      </div>
     </div>
   );
 }

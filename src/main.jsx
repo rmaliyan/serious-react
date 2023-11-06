@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/en" replace={true} />}
+          element={<Navigate to="/en/home" replace={true} />}
           errorElement={<ErrorPage />}
         ></Route>
 
@@ -49,5 +49,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
