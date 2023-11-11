@@ -3,42 +3,6 @@ import Content from "../content.json";
 import MenuItemsList from "../MenuItemsList.json";
 import {useState} from "react";
 
-// const MenuItemsList = [
-//   { content: "home", url: "home", subitems: [] },
-//   {
-//     content: "about",
-//     url: "about",
-//     subitems: [
-//       { content: "aboutUs", url: "about" },
-//       { content: "delivery", url: "delivery" },
-//       { content: "ratings", url: "ratings" },
-//     ],
-//   },
-//   { content: "technologies", url: "technologies", subitems: [] },
-//   {
-//     content: "services",
-//     url: "webdesign",
-//     subitems: [
-//       { content: "web", url: "webdesign" },
-//       { content: "mobile", url: "mobile" },
-//       { content: "software", url: "software" },
-//       { content: "business", url: "business" },
-//       { content: "ceo", url: "ceo" },
-//     ],
-//   },
-//   { content: "clients", url: "clients", subitems: [] },
-//   {
-//     content: "courses",
-//     url: "fullstack",
-//     subitems: [
-//       { content: "courses-js", url: "fullstack" },
-//       { content: "courses-react", url: "reactjs" },
-//     ],
-//   },
-//   { content: "careers", url: "careers", subitems: [] },
-//   { content: "contact", url: "contact", subitems: [] },
-// ];
-
 function MenuSubitem({ content, url }) {
   return (
     <Link className="ml-16 grow" to={url}>
