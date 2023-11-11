@@ -6,7 +6,7 @@ export function Ratings() {
   const ratings = Content[lang].ratings;
 
   return (
-    <div className="flex flex-col p-10">
+    <div className="animate-slideInContent flex flex-col p-10">
       <div className="text-3xl">{ratings.title}</div>
     </div>
   );

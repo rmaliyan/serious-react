@@ -6,7 +6,7 @@ export function Technologies() {
   const technologies = Content[lang].technologies;
 
   return (
-    <div className="flex flex-col p-10">
+    <div className="animate-slideInContent flex flex-col p-10">
       <div className="text-3xl">{technologies.title}</div>
     </div>
   );

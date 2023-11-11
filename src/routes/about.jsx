@@ -6,7 +6,7 @@ export function About() {
   const about = Content[lang].about;
 
   return (
-    <div className="flex flex-col p-10">
+    <div className="animate-slideInContent flex flex-col p-10">
       <div className="text-3xl">{about.title}</div>
       <div className="mt-5">{about.paragraph}</div>
     </div>

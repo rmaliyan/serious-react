@@ -6,7 +6,7 @@ export function Delivery() {
   const delivery = Content[lang].delivery;
 
   return (
-    <div className="flex flex-col p-10">
+    <div className="animate-slideInContent flex flex-col p-10">
       <div className="text-3xl">{delivery.title0}</div>
 
       <div className="flex">
