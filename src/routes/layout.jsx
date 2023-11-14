@@ -88,7 +88,7 @@ export function Layout() {
   return (
     <div
       id="layout-container"
-      className="layout-container flex h-fit w-screen flex-col overflow-scroll text-white lg:overflow-hidden"
+      className="layout-container flex h-fit w-full flex-col overflow-scroll text-white lg:overflow-hidden"
     >
       <div id="upper-bar" className="flex w-full">
         <div
