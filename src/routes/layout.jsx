@@ -17,8 +17,8 @@ function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
 
 function MenuSubitemLargeScreen({ url }) {
   return (
-    <Link className ="w-full ml-1" to={url}>
-      <div className ="h-1 w-full bg-white "></div>
+    <Link className="ml-1 w-full" to={url}>
+      <div className="h-1 w-full bg-white "></div>
     </Link>
   );
 }
@@ -50,7 +50,7 @@ function MenuItem({
   // }, []);
 
   return (
-    <div className="flex flex-col overflow-hidden border border-slate-500 lg:border-0 lg:flex lg:content-center lg:justify-center lg:mx-2">
+    <div className="flex flex-col overflow-hidden border border-slate-500 lg:mx-2 lg:flex lg:content-center lg:justify-center lg:border-0">
       <div className="flex w-full justify-between pr-5 lg:items-center lg:justify-center lg:p-0">
         <Link
           onClick={() => setmenuOpen(!menuOpen)}
@@ -84,7 +84,7 @@ function MenuItem({
         </div>
       )}
 
-      <div className="hidden lg:flex lg:content-between lg:w-4/5 lg:ml-1">
+      <div className="hidden lg:ml-1 lg:flex lg:w-4/5 lg:content-between">
         {subitems.map((child) => (
           <MenuSubitemLargeScreen url={child.url} key={child.url} />
         ))}
@@ -142,6 +142,12 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
   );
 }
 
+
+
+
+
+
+
 export function Layout() {
   const { lang } = useParams();
   const menu = Content[lang].menu;
@@ -151,6 +157,42 @@ export function Layout() {
   const currentLocation = location.pathname.substring(index + 1);
 
   const [menuOpen, setmenuOpen] = useState(false);
+  const [x, setmenuX] = useState(false);
+
+  // function getWindowDimensions() {
+  //   const { innerWidth: width, innerHeight: height } = window;
+  //   return {
+  //     width,
+  //     height,
+  //   };
+  // }
+
+  // function useWindowDimensions() {
+  //   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  //   useEffect(() => {
+  //     function handleResize() {
+  //       setWindowDimensions(getWindowDimensions());
+  //     }
+
+  //     window.addEventListener("resize", handleResize);
+  //     return () => window.removeEventListener("resize", handleResize);
+  //   }, []);
+
+  //   return windowDimensions;
+  // }
+
+  // const { width } = useWindowDimensions();
+  // console.log( width);
+  // if(width >= 1024 && x == false){
+  //   setmenuOpen(true);
+  //   setmenuX(true)
+  // }else if(width < 1024 && x == true){
+  //       setmenuOpen(false);
+  //       setmenuX(false);
+  // }
+
+  // console.log("menuOpen - " + menuOpen + ', x - ' + x);
 
   return (
     <div
@@ -194,299 +236,23 @@ export function Layout() {
         </div>
       </div>
 
-      <div className="lower-bar flex h-fit  w-full">
-        <div className="outlet-container box-content h-screen w-full border border-slate-500 bg-slate-950 bg-opacity-50">
-          <Outlet />
-        </div>
+        {/* <div className="lower-bar flex h-fit  w-full">
+          <div className="outlet-container box-content h-screen w-full border border-slate-500 bg-slate-950 bg-opacity-50">
+            <Outlet />
+          </div>
 
-        <div className="lower-vertical-bar hidden h-full w-20 flex-col items-center border-0 bg-transparent bg-opacity-50 sm:border-slate-500 sm:bg-slate-950 lg:flex">
-          <Link className="my-2 mt-10" to={`/en/${currentLocation}`}>
-            Eng
-          </Link>
-          <Link className="my-2" to={`/ru/${currentLocation}`}>
-            Rus
-          </Link>
-          <Link className="my-2" to={`/am/${currentLocation}`}>
-            Arm
-          </Link>
-        </div>
-      </div>
+          <div className="lower-vertical-bar hidden h-full w-20 flex-col items-center border-0 bg-transparent bg-opacity-50 sm:border-slate-500 sm:bg-slate-950 lg:flex">
+            <Link className="my-2 mt-10" to={`/en/${currentLocation}`}>
+              Eng
+            </Link>
+            <Link className="my-2" to={`/ru/${currentLocation}`}>
+              Rus
+            </Link>
+            <Link className="my-2" to={`/am/${currentLocation}`}>
+              Arm
+            </Link>
+          </div>
+        </div> */}
     </div>
   );
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//   return (
-//     <div
-//       id="layout-container"
-//       className="layout-container flex h-fit w-screen flex-col overflow-scroll text-white lg:overflow-hidden"
-//     >
-//       <div id="upper-bar" className="flex w-full">
-//         <div
-//           id="upper-horizontal-bar"
-//           className="flex h-20 w-full items-center border border-slate-500 bg-slate-950 bg-opacity-50 sm:h-20 sm:w-full"
-//         >
-//           <div
-//             id="Logo"
-//             className="Logo flex h-5/6 items-center justify-center "
-//           >
-//             <img
-//               className="ml-4 h-4/6"
-//               src="/public/SeriousLogo.webp"
-//               alt="Brand logo"
-//             />
-//           </div>
-
-//           <div className="menuText absolute right-0 top-24 h-fit w-full text-2xl font-extrabold backdrop-blur-sm lg:right-20 lg:top-6 lg:ml-auto lg:mr-4 lg:flex lg:h-fit lg:w-fit lg:gap-y-0.5 lg:pt-0 lg:text-base lg:font-normal lg:backdrop-blur-none">
-//             <div classname="w-full h-full flex flex-col">
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="home">
-//                   {menu.home}
-//                 </Link>
-//               </div>
-
-//               <div className="border border-slate-500 ">
-//                 <Link className="py-2 pl-7" to="about">
-//                   {menu.about}
-//                 </Link>
-
-//                 <div className="flex flex-col gap-1 lg:flex-row">
-//                   <Link className="ml-16 grow" to="about">
-//                     {menu.aboutUs}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="delivery">
-//                     {menu.delivery}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="ratings">
-//                     {menu.ratings}
-//                   </Link>
-//                 </div>
-//               </div>
-
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="technologies">
-//                   {menu.technologies}
-//                 </Link>
-//               </div>
-
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="webdesign">
-//                   {menu.services}
-//                 </Link>
-
-//                 <div className="flex flex-col gap-1">
-//                   <Link className="ml-16 grow" to="webdesign">
-//                     {menu.web}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="mobile">
-//                     {menu.mobile}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="software">
-//                     {menu.software}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="business">
-//                     {menu.business}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="ceo">
-//                     {menu.ceo}
-//                   </Link>
-//                 </div>
-//               </div>
-
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="fullstack">
-//                   {menu.courses}
-//                 </Link>
-
-//                 <div className="flex flex-col gap-1">
-//                   <Link className="ml-16 grow" to="fullstack">
-//                     {menu.fullstack}
-//                   </Link>
-
-//                   <Link className="ml-16 grow" to="reactjs">
-//                     {menu.reactjs}
-//                   </Link>
-//                 </div>
-//               </div>
-
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="clients">
-//                   {menu.clients}
-//                 </Link>
-//               </div>
-
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="careers">
-//                   {menu.careers}
-//                 </Link>
-//               </div>
-
-//               <div className="border border-slate-500">
-//                 <Link className="py-2 pl-7" to="contact">
-//                   {menu.contact}
-//                 </Link>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="menu-icon-container flex h-20 w-20 items-center justify-center border border-slate-500 bg-neutral-700 bg-opacity-80 sm:h-20 sm:w-20 lg:bg-transparent">
-//           <img
-//             className="h-6 lg:hidden"
-//             src="/public/sidebarLogo.svg"
-//             alt="Sidebar icon"
-//           />
-//         </div>
-//       </div>
-
-//       <div className="lower-bar flex h-fit  w-full">
-//         <div className="outlet-container box-content  h-screen  w-full border border-slate-500 bg-slate-950 bg-opacity-50">
-//           <Outlet />
-//         </div>
-
-//         <div className="lower-vertical-bar hidden h-full flex-col items-center border-0 bg-transparent bg-opacity-50 sm:h-full sm:w-20 sm:border-slate-500 sm:bg-slate-950 lg:flex">
-//           <Link className="my-2 mt-10" to={`/en/${currentLocation}`}>
-//             Eng
-//           </Link>
-//           <Link className="my-2" to={`/ru/${currentLocation}`}>
-//             Rus
-//           </Link>
-//           <Link className="my-2" to={`/am/${currentLocation}`}>
-//             Arm
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// return (
-//   <div id="layout-container" className="layout-container flex h-screen w-screen flex-col overflow-scroll text-white lg:overflow-hidden">
-//     <div id="upper-bar" className="flex w-full">
-//       <div id="upper-horizontal-bar" className="flex h-20 w-full items-center border border-slate-500 bg-slate-950 bg-opacity-50 sm:h-20 sm:w-full xl:h-32 xl:w-full">
-//         <div id="Logo" className="Logo flex h-5/6 items-center justify-center ">
-//           <img className="ml-4 h-4/6" src="/public/SeriousLogo.webp" alt="Brand logo"
-//           />
-//         </div>
-//         <div className="Text ml-auto mr-4 hidden gap-y-0.5 lg:flex">
-//           <Link className="mx-2" to="home">
-//             {menu.home}
-//           </Link>
-
-//           <div className="flex flex-col">
-//             <div>
-//               <Link className="mx-1" to="about">
-//                 {menu.about}
-//               </Link>
-//             </div>
-
-//             <div className="flex gap-1">
-//               <Link className="grow" to="about">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="delivery">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="ratings">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//             </div>
-//           </div>
-
-//           <Link className="mx-2" to="home">
-//             {menu.technologies}
-//           </Link>
-
-//           <div className="flex flex-col">
-//             <div>
-//               <Link className="mx-1" to="webdesign">
-//                 {menu.services}
-//               </Link>
-//             </div>
-
-//             <div className="flex gap-1">
-//               <Link className="grow" to="webdesign">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="mobile">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="software">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="business">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="ceo">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//             </div>
-//           </div>
-
-//           <Link className="mx-2" to="clients">
-//             {menu.clients}
-//           </Link>
-
-//           <div className="flex flex-col">
-//             <div>
-//               <Link className="mx-1" to="fullstack">
-//                 {menu.courses}
-//               </Link>
-//             </div>
-
-//             <div className="flex gap-1">
-//               <Link className="grow" to="fullstack">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//               <Link className="grow" to="reactjs">
-//                 <div className="h-1.5 rounded bg-white"></div>
-//               </Link>
-//             </div>
-//           </div>
-
-//           <Link className="mx-2" to="careers">
-//             {menu.careers}
-//           </Link>
-//           <Link className="mx-2" to="contact">
-//             {menu.contact}
-//           </Link>
-//         </div>
-//       </div>
-
-//       <div className="menu-icon-container flex h-20 w-20   items-center justify-center     border border-slate-500     bg-neutral-700 bg-opacity-80     sm:h-20 sm:w-20     xl:h-32 xl:w-32">
-//         <img
-//           className="h-6"
-//           src="/public/sidebarLogo.svg"
-//           alt="Sidebar icon"
-//         />
-//       </div>
-//     </div>
-
-//     <div className="lower-bar   flex     h-full w-full">
-//       <div className="outlet-container     box-content h-full      w-full border   border-slate-500   bg-slate-950 bg-opacity-50">
-//         <Outlet />
-//       </div>
-
-//       <div className="lower-vertical-bar  hidden h-full    w-20 flex-col     items-center border      border-slate-500 bg-slate-950       bg-opacity-50 sm:h-full     sm:w-20 lg:flex     xl:h-full xl:w-32">
-//         <Link className="my-2 mt-10" to={`/en/${currentLocation}`}>
-//           Eng
-//         </Link>
-//         <Link className="my-2" to={`/ru/${currentLocation}`}>
-//           Rus
-//         </Link>
-//         <Link className="my-2" to={`/am/${currentLocation}`}>
-//           Arm
-//         </Link>
-//       </div>
-//     </div>
-//   </div>
-// );
