@@ -1,7 +1,7 @@
 [
   { "content": "home", "url": "home", "subitems": [] },
   {
-    "content": "about",
+    "content": "aboutUs",
     "url": "about",
     "subitems": [
       { "content": "aboutUs", "url": "about" },

@@ -9,7 +9,7 @@ export function Delivery() {
     <div className="animate-slideInContent flex flex-col p-10">
       <div className="text-3xl">{delivery.title0}</div>
 
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <div className="flex flex-col p-5">
           <div className="text-xl">{delivery.title1}</div>
           <div className="mt-5">{delivery.paragraph1}</div>

@@ -1,23 +1,62 @@
 import { Outlet, Link, useParams, useLocation } from "react-router-dom";
 import Content from "../content.json";
 import MenuItemsList from "../MenuItemsList.json";
-import {useState} from "react";
+import { useEffect, useState } from "react";
 
-function MenuSubitem({ content, url }) {
+function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
   return (
-    <Link className="ml-16 grow" to={url}>
-      {content}
+    <Link
+      onClick={() => setmenuOpen(!menuOpen)}
+      className="ml-16 grow"
+      to={url}
+    >
+      <div>{content}</div>
     </Link>
   );
 }
 
-function MenuItem({ content, url, subitems, langContent }) {
+function MenuSubitemLargeScreen({ url }) {
+  return (
+    <Link className ="w-full ml-1" to={url}>
+      <div className ="h-1 w-full bg-white "></div>
+    </Link>
+  );
+}
+
+function MenuItem({
+  content,
+  url,
+  subitems,
+  langContent,
+  menuOpen,
+  setmenuOpen,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isScreenBiggerThan1024, setIsScreenBiggerThan1024] = useState(false);
+
+  // useEffect(() => {
+  //   const checkScreenSize = () => {
+  //     setIsScreenBiggerThan1024(window.innerWidth > 1024);
+  //   };
+
+  //   window.addEventListener('resize', checkScreenSize);
+  //   checkScreenSize();
+  //   return () => {
+
+  //     window.removeEventListener('resize', checkScreenSize);
+  //   };
+
+  // }, []);
+
   return (
-    <div className="flex flex-col overflow-hidden border border-slate-500 lg:border-0">
-      <div className="flex w-full items-center justify-between pr-5">
-        <Link className="py-2 pl-7 lg:p-0" to={url}>
+    <div className="flex flex-col overflow-hidden border border-slate-500 lg:border-0 lg:flex lg:content-center lg:justify-center lg:mx-2">
+      <div className="flex w-full justify-between pr-5 lg:items-center lg:justify-center lg:p-0">
+        <Link
+          onClick={() => setmenuOpen(!menuOpen)}
+          className="py-2 pl-7 lg:flex lg:p-0 "
+          to={url}
+        >
           {langContent[content]}
         </Link>
 
@@ -32,9 +71,11 @@ function MenuItem({ content, url, subitems, langContent }) {
       </div>
 
       {isOpen && (
-        <div className="flex animate-slideInText flex-col">
+        <div className="flex animate-slideInText flex-col lg:hidden">
           {subitems.map((child) => (
             <MenuSubitem
+              menuOpen={menuOpen}
+              setmenuOpen={setmenuOpen}
               content={langContent[child.content]}
               url={child.url}
               key={child.url}
@@ -42,19 +83,31 @@ function MenuItem({ content, url, subitems, langContent }) {
           ))}
         </div>
       )}
+
+      <div className="hidden lg:flex lg:content-between lg:w-4/5 lg:ml-1">
+        {subitems.map((child) => (
+          <MenuSubitemLargeScreen url={child.url} key={child.url} />
+        ))}
+      </div>
     </div>
   );
 }
 
-function Menu({ langContent }) {   
+function Menu({ langContent, menuOpen, setmenuOpen }) {
   const location = useLocation();
   const index = location.pathname.indexOf("/", 1);
   const currentLocation = location.pathname.substring(index + 1);
 
   return (
-    <div className="absolute right-0 top-24 h-fit w-full text-2xl font-extrabold backdrop-blur-sm lg:ml-auto lg:mr-4 lg:flex lg:h-fit lg:w-fit lg:gap-y-0.5 lg:pt-0 lg:text-base lg:font-normal lg:backdrop-blur-none lg:right-20 lg:top-6 ">
+    <div
+      className={`${
+        menuOpen ? "animate-slideInText" : "animate-slideOutText"
+      } absolute right-0 top-24 h-fit w-full text-2xl font-extrabold backdrop-blur-sm lg:right-20 lg:top-6 lg:ml-auto lg:mr-4 lg:flex lg:h-fit lg:w-fit lg:gap-y-0.5 lg:pt-0 lg:text-base lg:font-normal lg:backdrop-blur-none `}
+    >
       {MenuItemsList.map((item) => (
         <MenuItem
+          menuOpen={menuOpen}
+          setmenuOpen={setmenuOpen}
           content={item.content}
           url={item.url}
           subitems={item.subitems}
@@ -63,13 +116,25 @@ function Menu({ langContent }) {
         />
       ))}
       <div className="mt-10 flex w-full justify-around lg:hidden">
-        <Link className="my-2" to={`/en/${currentLocation}`}>
+        <Link
+          onClick={() => setmenuOpen(!menuOpen)}
+          className="my-2"
+          to={`/en/${currentLocation}`}
+        >
           ENG
         </Link>
-        <Link className="my-2" to={`/ru/${currentLocation}`}>
+        <Link
+          onClick={() => setmenuOpen(!menuOpen)}
+          className="my-2"
+          to={`/ru/${currentLocation}`}
+        >
           RUS
         </Link>
-        <Link className="my-2" to={`/am/${currentLocation}`}>
+        <Link
+          onClick={() => setmenuOpen(!menuOpen)}
+          className="my-2"
+          to={`/am/${currentLocation}`}
+        >
           ARM
         </Link>
       </div>
@@ -85,6 +150,8 @@ export function Layout() {
   const index = location.pathname.indexOf("/", 1);
   const currentLocation = location.pathname.substring(index + 1);
 
+  const [menuOpen, setmenuOpen] = useState(false);
+
   return (
     <div
       id="layout-container"
@@ -97,20 +164,28 @@ export function Layout() {
         >
           <div
             id="Logo"
-            className="Logo flex h-5/6 items-center justify-center "
+            className="Logo flex h-5/6 items-center justify-center"
           >
             <img
               className="ml-4 h-4/6"
               src="/SeriousLogo.webp"
               alt="Brand logo"
             />
-            
           </div>
 
-          <Menu langContent={menu} />
+          {menuOpen && (
+            <Menu
+              menuOpen={menuOpen}
+              setmenuOpen={setmenuOpen}
+              langContent={menu}
+            />
+          )}
         </div>
 
-        <div className="menu-icon-container flex h-20 w-20 items-center justify-center border border-slate-500 bg-neutral-700 bg-opacity-80 sm:h-20 sm:w-20 lg:bg-transparent">
+        <div
+          onClick={() => setmenuOpen(!menuOpen)}
+          className="menu-icon-container flex h-20 w-20 items-center justify-center border border-slate-500 bg-neutral-700 bg-opacity-80 sm:h-20 sm:w-20 lg:bg-transparent"
+        >
           <img
             className="h-6 lg:hidden"
             src="/sidebarLogo.svg"
@@ -124,7 +199,7 @@ export function Layout() {
           <Outlet />
         </div>
 
-        <div className="lower-vertical-bar hidden h-full flex-col items-center border-0 bg-transparent bg-opacity-50 w-20 sm:border-slate-500 sm:bg-slate-950 lg:flex">
+        <div className="lower-vertical-bar hidden h-full w-20 flex-col items-center border-0 bg-transparent bg-opacity-50 sm:border-slate-500 sm:bg-slate-950 lg:flex">
           <Link className="my-2 mt-10" to={`/en/${currentLocation}`}>
             Eng
           </Link>
@@ -292,14 +367,7 @@ export function Layout() {
 //   );
 // }
 
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
 // return (
 //   <div id="layout-container" className="layout-container flex h-screen w-screen flex-col overflow-scroll text-white lg:overflow-hidden">
