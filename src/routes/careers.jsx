@@ -6,9 +6,9 @@ export function Careers() {
   const careers = Content[lang].careers;
 
   return (
-    <div className="animate-slideInContent flex flex-col p-10">
-      <div className="text-3xl">{careers.title}</div>
-      <div className="mt-5">{careers.paragraph}</div>
+    <div className="animate-slideInContent flex flex-col p-10 lg:p-20">
+      <div className="text-2xl lg:text-7xl text-cyan-400 font-extrabold">{careers.title}</div>
+      <div className="mt-5 text-xl lg:text-2xl font-bold">{careers.paragraph}</div>
     </div>
   );
 }

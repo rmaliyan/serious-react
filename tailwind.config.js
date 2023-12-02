@@ -22,9 +22,9 @@ export default {
         }
       },
       animation: {
-        slideInText: 'slideInText 0.5s ease-in-out',
-        slideOutText: 'slideOutText 0.5s ease-in-out',
-        slideInContent: 'slideInContent 0.5s ease-in-out',
+        slideInText: 'slideInText 0.8s ease-in-out',
+        slideOutText: 'slideOutText 0.8s ease-in-out',
+        slideInContent: 'slideInContent 0.8s ease-in-out',
       }
       
     },    

@@ -6,10 +6,10 @@ export function Software() {
   const software = Content[lang].software;
 
   return (
-    <div className="animate-slideInContent flex flex-col p-10">
-      <div className="text-3xl">{software.title1}</div>
-      <div className="text-3xl">{software.title2}</div>
-      <div className="mt-5">{software.paragraph}</div>
+    <div className="animate-slideInContent flex flex-col p-10 lg:p-20">
+      <div className="text-4xl lg:text-8xl font-extrabold font-serif">{software.title1}</div>
+      <div className="outlineTitle text-3xl lg:text-7xl font-sans font-black text-black">{software.title2}</div>
+      <div className="mt-5 text-xl lg:text-2xl font-bold">{software.paragraph}</div>
     </div>
   );
 }

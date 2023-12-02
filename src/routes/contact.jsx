@@ -6,8 +6,8 @@ export function Contact() {
   const contact = Content[lang].contact;
 
   return (
-    <div className="animate-slideInContent flex flex-col p-10">
-      <div className="text-3xl">{contact.title}</div>
+    <div className="animate-slideInContent flex flex-col p-10 lg:p-20">
+      <div className="text-2xl lg:text-7xl text-cyan-400 font-extrabold">{contact.title}</div>
     </div>
   );
 }

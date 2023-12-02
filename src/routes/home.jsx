@@ -6,9 +6,9 @@ export function Home() {
   const home = Content[lang].home;
 
   return (
-    <div className="animate-slideInContent flex flex-col p-10">
-      <div className="text-3xl">{home.title}</div>
-      <div className="mt-5">{home.paragraph}</div>
+    <div className="animate-slideInContent flex flex-col items-start w-10/12 p-10 lg:p-32">
+      <div className="text-cyan-400 font-extrabold text-2xl lg:text-7xl">{home.title}</div>
+      <div className="mt-5 font-bold text-xl lg:text-3xl">{home.paragraph}</div>
     </div>
   );
 }
