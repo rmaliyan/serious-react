@@ -6,10 +6,10 @@ export function Webdesign() {
   const webdesign = Content[lang].webdesign;
 
   return (
-    <div className="animate-slideInContent flex flex-col p-10">
-      <div className="text-3xl">{webdesign.title1}</div>
-      <div className="text-3xl">{webdesign.title2}</div>
-      <div className="mt-5">{webdesign.paragraph}</div>
+    <div className="animate-slideInContent flex flex-col p-10 lg:p-20">
+      <div className="text-4xl lg:text-8xl font-extrabold font-serif">{webdesign.title1}</div>
+      <div className="outlineTitle text-3xl lg:text-7xl font-sans font-black text-black">{webdesign.title2}</div>
+      <div className="mt-5 text-xl lg:text-2xl font-bold">{webdesign.paragraph}</div>
     </div>
   );
 }

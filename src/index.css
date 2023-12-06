@@ -18,12 +18,9 @@ body {
     rgba(29, 16, 66, 1) 53%,
     rgba(2, 0, 36, 1) 100%
   );
+  overflow: hidden
 }
 
-
-
-*{
-  margin: 0 !important;
-  padding: 0;
-  box-sizing: border-box
+.outlineTitle {
+  text-shadow: 2px 0 0 #fff,-2px 0 0 #fff,0 2px 0 #fff,0 -2px 0 #fff,1px 1px #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff;
 }

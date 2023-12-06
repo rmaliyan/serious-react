@@ -6,8 +6,8 @@ export function Ratings() {
   const ratings = Content[lang].ratings;
 
   return (
-    <div className="animate-slideInContent flex flex-col p-10">
-      <div className="text-3xl">{ratings.title}</div>
+    <div className="animate-slideInContent flex flex-col items-center p-10 lg:p-20">
+      <div className="text-2xl lg:text-7xl text-cyan-400 font-extrabold">{ratings.title}</div>
     </div>
   );
 }
