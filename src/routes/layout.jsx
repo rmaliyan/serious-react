@@ -10,7 +10,7 @@ function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
       className="w-full lg:px-1"
       to={url}
     >
-      <div className="hidden lg:block lg:h-1 lg:w-full lg:bg-white"></div>
+      <div className="hidden lg:block lg:h-1 lg:w-full lg:bg-white lg:rounded-full"></div>
       <div className="lg:hidden">{content}</div>
     </Link>
   );
