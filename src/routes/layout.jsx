@@ -1,18 +1,44 @@
-import { Outlet, Link, useParams, useLocation } from "react-router-dom";
+import {
+  Outlet,
+  Link,
+  NavLink,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import Content from "../content.json";
 import MenuItemsList from "../MenuItemsList.json";
 import { useEffect, useState } from "react";
 
 function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
+  const location = useLocation();
+  const index = location.pathname.indexOf("/", 1);
+  const currentLocation = location.pathname.substring(index + 1);
+
   return (
-    <Link
+    <NavLink
       onClick={() => setmenuOpen(!menuOpen)}
-      className="w-full lg:px-1"
+      className={({ isActive }) =>
+        `w-full lg:px-1 ${isActive ? "text-cyan-500" : ""}`
+      }
       to={url}
     >
-      <div className="hidden lg:block lg:h-1 lg:w-full lg:bg-white lg:rounded-full"></div>
-      <div className="lg:hidden">{content}</div>
-    </Link>
+      {({ isActive }) => (
+        <>
+          <div
+            className={`hidden lg:block lg:h-1 lg:w-full lg:rounded-full lg:bg-white ${
+              currentLocation == url ? "lg:bg-cyan-500" : ""
+            }`}
+          ></div>
+          <div
+            className={`lg:hidden ${
+              currentLocation == url ? "text-cyan-500" : "text-white"
+            }`}
+          >
+            {content}
+          </div>
+        </>
+      )}
+    </NavLink>
   );
 }
 
@@ -28,14 +54,16 @@ function MenuItem({
 
   return (
     <div className="flex flex-col overflow-hidden border border-slate-500 lg:flex lg:items-center lg:justify-start lg:border-0">
-      <div className="flex w-full items-center justify-between pr-5 lg:mx-2 lg:items-start lg:justify-center lg:text-2xl lg:font-extrabold lg:p-0">
-        <Link
+      <div className="flex w-full items-center justify-between pr-5 lg:mx-2 lg:items-start lg:justify-center lg:p-0 lg:text-2xl lg:font-extrabold">
+        <NavLink
           onClick={() => setmenuOpen(!menuOpen)}
-          className="py-2 pl-7 lg:flex lg:p-0 "
+          className={({ isActive }) =>
+            `py-2 pl-7 lg:flex lg:p-0 ${isActive ? "text-cyan-500" : ""}`
+          }
           to={url}
         >
           {langContent[content]}
-        </Link>
+        </NavLink>
 
         {subitems.length > 0 && (
           <img
@@ -78,7 +106,7 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
           ? "animate-slideInText"
           : "h-0 translate-x-full animate-slideOutText"
       } absolute right-0 top-24 h-full w-full text-2xl font-extrabold backdrop-blur-sm 
-      lg:relative lg:flex  lg:right-0 lg:top-0 lg:ml-auto lg:mr-4 lg:h-fit lg:w-fit lg:translate-x-0 lg:animate-none lg:gap-y-0.5 lg:text-base lg:font-normal lg:backdrop-blur-none`}
+      lg:relative lg:right-0  lg:top-0 lg:ml-auto lg:mr-4 lg:flex lg:h-fit lg:w-fit lg:translate-x-0 lg:animate-none lg:gap-y-0.5 lg:text-base lg:font-normal lg:backdrop-blur-none`}
     >
       {MenuItemsList.map((item) => (
         <MenuItem
@@ -93,27 +121,33 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
       ))}
 
       <div className="flex h-full w-full justify-around border border-slate-500 pt-10 lg:hidden">
-        <Link
+        <NavLink
           onClick={() => setmenuOpen(!menuOpen)}
-          className="my-2"
+          className={({ isActive }) =>
+            `my-2 ${isActive ? "text-cyan-500" : ""}`
+          }
           to={`/en/${currentLocation}`}
         >
           ENG
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           onClick={() => setmenuOpen(!menuOpen)}
-          className="my-2"
+          className={({ isActive }) =>
+            `my-2 ${isActive ? "text-cyan-500" : ""}`
+          }
           to={`/ru/${currentLocation}`}
         >
           RUS
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           onClick={() => setmenuOpen(!menuOpen)}
-          className="my-2"
+          className={({ isActive }) =>
+            `my-2 ${isActive ? "text-cyan-500" : ""}`
+          }
           to={`/am/${currentLocation}`}
         >
           ARM
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
@@ -180,7 +214,7 @@ export function Layout() {
         >
           <div
             id="Logo"
-            className="Logo ml-1 flex h-3/5 items-center justify-center lg:h-5/6 lg:ml-28"
+            className="Logo ml-1 flex h-3/5 items-center justify-center lg:ml-28 lg:h-5/6"
           >
             <img
               className="ml-4 h-4/6"
@@ -214,15 +248,30 @@ export function Layout() {
         </div>
 
         <div className="lower-vertical-bar hidden h-full w-28 flex-col items-center border-0 bg-transparent bg-opacity-50 lg:flex lg:place-self-stretch lg:border lg:border-slate-500 lg:bg-slate-950">
-          <Link className="my-2 mt-10 text-xl font-bold" to={`/en/${currentLocation}`}>
+          <NavLink
+            className={({ isActive }) =>
+              `my-2 mt-10 text-xl font-bold ${isActive ? "text-cyan-500" : ""}`
+            }
+            to={`/en/${currentLocation}`}
+          >
             ENG
-          </Link>
-          <Link className="my-2 mt-8 text-xl font-bold" to={`/ru/${currentLocation}`}>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `my-2 mt-8 text-xl font-bold ${isActive ? "text-cyan-500" : ""}`
+            }
+            to={`/ru/${currentLocation}`}
+          >
             RУС
-          </Link>
-          <Link className="my-2 mt-8 text-xl font-bold" to={`/am/${currentLocation}`}>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `my-2 mt-8 text-xl font-bold ${isActive ? "text-cyan-500" : ""}`
+            }
+            to={`/am/${currentLocation}`}
+          >
             ՀԱՅ
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

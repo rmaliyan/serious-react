@@ -5,29 +5,29 @@
     "url": "about",
     "subitems": [
       { "content": "aboutUs", "url": "about" },
-      { "content": "delivery", "url": "delivery" },
-      { "content": "ratings", "url": "ratings" }
+      { "content": "delivery", "url": "about/delivery"},
+      { "content": "ratings", "url": "about/ratings" }
     ]
   },
   { "content": "technologies", "url": "technologies", "subitems": [] },
   {
     "content": "services",
-    "url": "webdesign",
+    "url": "services",
     "subitems": [
-      { "content": "web", "url": "webdesign" },
-      { "content": "mobile", "url": "mobile" },
-      { "content": "software", "url": "software" },
-      { "content": "business", "url": "business" },
-      { "content": "ceo", "url": "ceo" }
+      { "content": "web", "url": "services/webdesign" },
+      { "content": "mobile", "url": "services/mobile" },
+      { "content": "software", "url": "services/software" },
+      { "content": "business", "url": "services/business" },
+      { "content": "ceo", "url": "services/ceo" }
     ]
   },
   { "content": "clients", "url": "clients", "subitems": [] },
   {
     "content": "courses",
-    "url": "fullstack",
+    "url": "courses",
     "subitems": [
-      { "content": "courses-js", "url": "fullstack" },
-      { "content": "courses-react", "url": "reactjs" }
+      { "content": "courses-js", "url": "courses/fullstack" },
+      { "content": "courses-react", "url": "courses/reactjs" }
     ]
   },
   { "content": "careers", "url": "careers", "subitems": [] },

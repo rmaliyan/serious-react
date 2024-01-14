@@ -33,17 +33,19 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/:lang" element={<Layout />} errorElement={<ErrorPage />}>
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="delivery" element={<Delivery />} />
-          <Route path="ratings" element={<Ratings />} />
+          <Route path="about/delivery" element={<Delivery />} />
+          <Route path="about/ratings" element={<Ratings />} />
           <Route path="technologies" element={<Technologies />} />
-          <Route path="webdesign" element={<Webdesign />} />
-          <Route path="mobile" element={<Mobile />} />
-          <Route path="software" element={<Software />} />
-          <Route path="business" element={<Business />} />
-          <Route path="ceo" element={<Ceo />} />
+          <Route path="services" element={<Navigate to="webdesign" replace={true}/>} />
+          <Route path="services/webdesign" element={<Webdesign />} />
+          <Route path="services/mobile" element={<Mobile />} />
+          <Route path="services/software" element={<Software />} />
+          <Route path="services/business" element={<Business />} />
+          <Route path="services/ceo" element={<Ceo />} />
           <Route path="clients" element={<Clients />} />
-          <Route path="fullstack" element={<Fullstack />} />
-          <Route path="reactjs" element={<Reactjs />} />
+          <Route path="courses" element={<Navigate to="fullstack" replace={true}/>} />
+          <Route path="courses/fullstack" element={<Fullstack />} />
+          <Route path="courses/reactjs" element={<Reactjs />} />
           <Route path="careers" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
         </Route>
