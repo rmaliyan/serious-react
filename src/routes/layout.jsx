@@ -10,8 +10,8 @@ function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
       className="w-full lg:px-1"
       to={url}
     >
-      <div className="hidden lg:block lg:h-1 lg:w-full lg:bg-white lg:rounded-full"></div>
-      <div className="lg:hidden">{content}</div>
+      <div className="hidden lg:block lg:h-1 lg:w-full lg:bg-white lg:rounded-full "></div>
+      <div className="lg:hidden ">{content}</div>
     </Link>
   );
 }
@@ -27,7 +27,7 @@ function MenuItem({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col overflow-hidden border border-slate-500 lg:flex lg:items-center lg:justify-start lg:border-0">
+    <div className="flex flex-col overflow-hidden border border-slate-500 lg:flex lg:items-center lg:justify-start lg:border-0 ">
       <div className="flex w-full items-center justify-between pr-5 lg:mx-2 lg:items-start lg:justify-center lg:text-2xl lg:font-extrabold lg:p-0">
         <Link
           onClick={() => setmenuOpen(!menuOpen)}
@@ -41,7 +41,7 @@ function MenuItem({
           <img
             onClick={() => setIsOpen(!isOpen)}
             className="h-4 lg:hidden"
-            src={isOpen ? "/lineUp.svg" : "/lineDown.svg"}
+            src={isOpen ? "/lineUp.svg " : "/lineDown.svg "}
             alt="Sidebar icon"
           />
         )}
@@ -50,7 +50,7 @@ function MenuItem({
       <div
         className={`${
           isOpen ? "flex" : "hidden"
-        } w-full animate-slideInText flex-col pl-16 lg:flex lg:flex-row lg:pl-0`}
+        } w-full animate-slideInText flex-col pl-16 lg:flex lg:flex-row lg:pl-0 `}
       >
         {subitems.map((child) => (
           <MenuSubitem
@@ -75,9 +75,9 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
     <div
       className={`${
         menuOpen
-          ? "animate-slideInText"
-          : "h-0 translate-x-full animate-slideOutText"
-      } absolute right-0 top-24 h-full w-full text-2xl font-extrabold backdrop-blur-sm 
+          ? "animate-slideInTex"
+          : "h-0 translate-x-full animate-slideOutText  "
+      } absolute right-0 top-24 h-full w-full text-2xl font-extrabold backdrop-blur-sm  
       lg:relative lg:flex  lg:right-0 lg:top-0 lg:ml-auto lg:mr-4 lg:h-fit lg:w-fit lg:translate-x-0 lg:animate-none lg:gap-y-0.5 lg:text-base lg:font-normal lg:backdrop-blur-none`}
     >
       {MenuItemsList.map((item) => (
@@ -92,7 +92,7 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
         />
       ))}
 
-      <div className="flex h-full w-full justify-around border border-slate-500 pt-10 lg:hidden">
+      <div className="flex h-full w-full justify-around border border-slate-500 pt-10 lg:hidden ">
         <Link
           onClick={() => setmenuOpen(!menuOpen)}
           className="my-2"
@@ -176,14 +176,14 @@ export function Layout() {
       <div id="upper-bar" className="flex w-full">
         <div
           id="upper-horizontal-bar"
-          className="flex h-20 w-full items-center border border-slate-500 bg-slate-950 bg-opacity-50 lg:h-28"
+          className="flex h-20 w-full items-center border border-slate-500 bg-slate-950 bg-opacity-50 lg:h-28 "
         >
           <div
             id="Logo"
-            className="Logo ml-1 flex h-3/5 items-center justify-center lg:h-5/6 lg:ml-28"
+            className="Logo ml-1 flex h-3/5 items-center justify-center lg:h-5/6 lg:ml-28 "
           >
             <img
-              className="ml-4 h-4/6"
+              className="ml-4 h-4/6 "
               src="/SeriousLogo.webp"
               alt="Brand logo"
             />
@@ -198,10 +198,10 @@ export function Layout() {
 
         <div
           onClick={() => setmenuOpen(!menuOpen)}
-          className="menu-icon-container flex h-20 w-20 items-center justify-center border border-slate-500 bg-neutral-700 bg-opacity-80 lg:h-28 lg:w-28 lg:bg-transparent"
+          className="menu-icon-container flex h-20 w-20 items-center justify-center border  border-slate-500 bg-neutral-700 bg-opacity-80 lg:h-28 lg:w-28 lg:bg-transparent"
         >
           <img
-            className="h-6 lg:hidden"
+            className="h-6 lg:hidden "
             src="/sidebarLogo.svg"
             alt="Sidebar icon"
           />
@@ -213,7 +213,7 @@ export function Layout() {
           <Outlet />
         </div>
 
-        <div className="lower-vertical-bar hidden h-full w-28 flex-col items-center border-0 bg-transparent bg-opacity-50 lg:flex lg:place-self-stretch lg:border lg:border-slate-500 lg:bg-slate-950">
+        <div className="lower-vertical-bar  hidden h-full w-28 flex-col items-center border-0 bg-transparent bg-opacity-50 lg:flex lg:place-self-stretch lg:border lg:border-slate-500 lg:bg-slate-950">
           <Link className="my-2 mt-10 text-xl font-bold" to={`/en/${currentLocation}`}>
             ENG
           </Link>
