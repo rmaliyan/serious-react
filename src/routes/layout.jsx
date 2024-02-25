@@ -25,8 +25,8 @@ function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
       {({ isActive }) => (
         <>
           <div
-            className={`hidden lg:block lg:h-1 lg:w-full lg:rounded-full lg:bg-white ${
-              currentLocation == url ? "lg:bg-cyan-500" : ""
+            className={`hidden lg:block lg:h-1 lg:w-full lg:rounded-full ${
+              currentLocation == url ? "lg:bg-cyan-500" : "lg:bg-white"
             }`}
           ></div>
           <div
