@@ -200,8 +200,6 @@ export function Layout() {
     }
   }, [width]);
 
-  console.log("menuOpen - " + menuOpen);
-
   return (
     <div
       id="layout-container"

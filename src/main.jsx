@@ -25,12 +25,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
-          element={<Navigate to="/en/home" replace={true} />}
+          path={import.meta.env.BASE_URL} 
+          element={<Navigate to={`${import.meta.env.BASE_URL}en/home`} replace={true} />}
           errorElement={<ErrorPage />}
         ></Route>
 
-        <Route path="/:lang" element={<Layout />} errorElement={<ErrorPage />}>
+        <Route path={`${import.meta.env.BASE_URL}:lang`} element={<Layout />} errorElement={<ErrorPage />}>
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="about/delivery" element={<Delivery />} />
