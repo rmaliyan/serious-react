@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 
 function MenuSubitem({ content, url, menuOpen, setmenuOpen }) {
   const location = useLocation();
-  const index = location.pathname.indexOf("/", 1);
+  const index = location.pathname.indexOf("/", import.meta.env.BASE_URL.length);
+  console.log(location.pathname.indexOf("/", import.meta.env.BASE_URL.length));
   const currentLocation = location.pathname.substring(index + 1);
 
   return (
@@ -95,7 +96,7 @@ function MenuItem({
 
 function Menu({ langContent, menuOpen, setmenuOpen }) {
   const location = useLocation();
-  const index = location.pathname.indexOf("/", 1);
+  const index = location.pathname.indexOf("/", import.meta.env.BASE_URL.length);
   const currentLocation = location.pathname.substring(index + 1);
 
   return (
@@ -125,7 +126,7 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
           className={({ isActive }) =>
             `my-2 ${isActive ? "text-cyan-500" : ""}`
           }
-          to={`/en/${currentLocation}`}
+          to={`${import.meta.env.BASE_URL}en/${currentLocation}`}
         >
           ENG
         </NavLink>
@@ -134,7 +135,7 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
           className={({ isActive }) =>
             `my-2 ${isActive ? "text-cyan-500" : ""}`
           }
-          to={`/ru/${currentLocation}`}
+          to={`${import.meta.env.BASE_URL}ru/${currentLocation}`}
         >
           RUS
         </NavLink>
@@ -143,7 +144,7 @@ function Menu({ langContent, menuOpen, setmenuOpen }) {
           className={({ isActive }) =>
             `my-2 ${isActive ? "text-cyan-500" : ""}`
           }
-          to={`/am/${currentLocation}`}
+          to={`${import.meta.env.BASE_URL}am/${currentLocation}`}
         >
           ARM
         </NavLink>
@@ -157,7 +158,7 @@ export function Layout() {
   const menu = Content[lang].menu;
 
   const location = useLocation();
-  const index = location.pathname.indexOf("/", 1);
+  const index = location.pathname.indexOf("/", import.meta.env.BASE_URL.length);
   const currentLocation = location.pathname.substring(index + 1);
 
   const [menuOpen, setmenuOpen] = useState(false);
@@ -249,7 +250,7 @@ export function Layout() {
             className={({ isActive }) =>
               `my-2 mt-10 text-xl font-bold ${isActive ? "text-cyan-500" : ""}`
             }
-            to={`/en/${currentLocation}`}
+            to={`${import.meta.env.BASE_URL}en/${currentLocation}`}
           >
             ENG
           </NavLink>
@@ -257,7 +258,7 @@ export function Layout() {
             className={({ isActive }) =>
               `my-2 mt-8 text-xl font-bold ${isActive ? "text-cyan-500" : ""}`
             }
-            to={`/ru/${currentLocation}`}
+            to={`${import.meta.env.BASE_URL}ru/${currentLocation}`}
           >
             RУС
           </NavLink>
@@ -265,7 +266,7 @@ export function Layout() {
             className={({ isActive }) =>
               `my-2 mt-8 text-xl font-bold ${isActive ? "text-cyan-500" : ""}`
             }
-            to={`/am/${currentLocation}`}
+            to={`${import.meta.env.BASE_URL}am/${currentLocation}`}
           >
             ՀԱՅ
           </NavLink>
