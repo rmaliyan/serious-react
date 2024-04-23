@@ -1,6 +1,5 @@
 import {
   Outlet,
-  Link,
   NavLink,
   useParams,
   useLocation,
@@ -69,7 +68,7 @@ function MenuItem({
           <img
             onClick={() => setIsOpen(!isOpen)}
             className="h-4 lg:hidden"
-            src={isOpen ? "/lineUp.svg" : "/lineDown.svg"}
+            src={isOpen ? `${import.meta.env.BASE_URL}lineUp.svg` : `${import.meta.env.BASE_URL}lineDown.svg`}
             alt="Sidebar icon"
           />
         )}
@@ -216,7 +215,7 @@ export function Layout() {
           >
             <img
               className="ml-4 h-4/6"
-              src="/SeriousLogo.webp"
+              src={`${import.meta.env.BASE_URL}SeriousLogo.webp`}
               alt="Brand logo"
             />
           </div>
@@ -234,7 +233,7 @@ export function Layout() {
         >
           <img
             className="h-6 lg:hidden"
-            src="/sidebarLogo.svg"
+            src={`${import.meta.env.BASE_URL}sidebarLogo.svg`}
             alt="Sidebar icon"
           />
         </div>
